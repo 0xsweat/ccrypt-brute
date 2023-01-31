@@ -35,7 +35,7 @@ if str(encfile[-4:]) != ".cpt" and os.path.isfile(encfile) == True or os.path.is
     print(Fore.RED + "Invalid file type")
     quit() 
 print(Fore.BLUE + "")
-with alive_bar(len(cvstep2)) as bar:
+with alive_bar(len(cvstep2), title="Cracking", bar="classic2") as bar:
     for z in range(len(cvstep2)):
         os.system("ccrypt -d -K '" + cvstep2[z] + "' " + encfile + " 2>/dev/null")
         fc = os.path.isfile(encfile)
